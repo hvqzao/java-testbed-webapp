@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Welcome</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+        <p><a th:href="@{/issue-token}">issue token</a></p>
+        <p><a th:href="@{/reflected-xss} + '?p=' + ${p}">reflected xss</a></p>
+        <p><a th:href="@{/reflected-xss-with-token} + '?token=' + ${token} + '&amp;p=' + ${p}">reflected xss with token</a></p>
+        <p><a th:href="@{/stored-xss-set} + '?p=' + ${p}">stored xss set</a></p>
+        <p><a th:href="@{/stored-xss-get}">stored xss get</a></p>
+        <p><a th:href="@{/stored-xss-get-with-token} + '?token=' + ${token}">stored xss with token</a></p><!--/* 
+        <p><a th:href="@{/spel-verbose} + '?p=${%22aaa%22.length()}'">spel verbose</a></p> */-->
+    </body>
+</html>

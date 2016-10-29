@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Reflected XSS With Token</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+        <p><a th:href="@{/}">back</a></p>
+        <p th:if="${token} == true" th:utext="${p}"></p>
+        <p th:if="${token} == false">token invalid</p>
+    </body>
+</html>
